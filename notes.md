@@ -53,3 +53,9 @@ using default dir /var/www/html.
 Restart apache:
 sudo systemctl enable httpd.service
 sudo systemctl restart httpd.service
+
+sudo yum -y install python-pip
+sudo pip install cellbrowser
+cd; curl -s https://cells.ucsc.edu/downloads/samples/mini.tgz | tar xvz
+cd mini
+cbBuild -o ~/public_html/cells/ -p 8888

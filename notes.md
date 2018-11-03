@@ -1,17 +1,21 @@
 # Notes during build process
 
+```
 CentOS Linux 7
 sudo yum -y update
 useradd example_user && passwd example_user
 sudo yum -y install httpd
 sudo cp /etc/httpd/conf/httpd.conf /etc/httpd/conf/httpd.conf.original
 sudo yum -y install emacs
+```
 
 # Sample HTML
 
+```
 sudo emacs -nw /var/www/html/sample.html
- 
- * Add the following text
+```
+
+Add the following text
  
 ```
 <!DOCTYPE html>
@@ -51,11 +55,18 @@ Modify httpd.conf with your document root directory to point Apache to your site
 using default dir /var/www/html.
 
 Restart apache:
+```
 sudo systemctl enable httpd.service
 sudo systemctl restart httpd.service
+```
 
+Install and run a demo of CellBrowser
+```
 sudo yum -y install python-pip
 sudo pip install cellbrowser
 cd; curl -s https://cells.ucsc.edu/downloads/samples/mini.tgz | tar xvz
 cd mini
 cbBuild -o ~/public_html/cells/ -p 8888
+```
+
+Go to IP_address:8888.

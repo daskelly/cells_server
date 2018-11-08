@@ -70,3 +70,15 @@ cbBuild -o ~/public_html/cells/ -p 8888
 ```
 
 Go to IP_address:8888.
+
+# Developing a demo served by Apache
+
+```
+sudo yum install mosh
+sudo pip install --upgrade pip
+sudo pip install numpy
+```
+
+Added `CBOUT` to `~/.bashrc`.
+
+For some reason cbBuild with `-o $CBOUT` trying to serve with Apache doesn't seem to be working ...

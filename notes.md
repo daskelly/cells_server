@@ -1,12 +1,25 @@
 # Notes during build process
 
 ```
+ssh <cells>
+```
+
+```
 CentOS Linux 7
 sudo yum -y update
 useradd example_user && passwd example_user
 sudo yum -y install httpd
 sudo cp /etc/httpd/conf/httpd.conf /etc/httpd/conf/httpd.conf.original
 sudo yum -y install emacs
+```
+
+# Bash profile
+
+Add the following text to `~/.profile`.
+```
+if [ -f ~/.bashrc ]; then
+        . ~/.bashrc
+fi
 ```
 
 # Sample HTML

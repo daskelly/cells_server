@@ -83,6 +83,11 @@ sudo systemctl enable httpd.service
 sudo systemctl restart httpd.service
 ```
 
+Files in `/var/www` by default:
+```
+cgi-bin  html  sample
+```
+
 Install and run a demo of CellBrowser
 ```
 sudo yum -y install python-pip
@@ -102,6 +107,8 @@ sudo pip install --upgrade pip
 sudo pip install numpy
 ```
 
-Added `CBOUT` to `~/.bashrc`.
+Building the mini example to be hosted by cellBrowser:
+```
+cbBuild -o /var/www/html
+```
 
-For some reason cbBuild with `-o $CBOUT` trying to serve with Apache doesn't seem to be working ...

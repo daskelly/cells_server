@@ -67,6 +67,16 @@ limitations under the License.
 Modify httpd.conf with your document root directory to point Apache to your site’s files - I am 
 using default dir /var/www/html.
 
+Change webserver's dirs to be owned by apache user,
+and add myself to apache group
+```
+sudo chown -R apache:apache /var/www
+sudo usermod -a -G apache `whoami`
+sudo chmod -R 775 /var/www
+```
+The change in group membership does not take effect until logging 
+back in.
+
 Restart apache:
 ```
 sudo systemctl enable httpd.service
